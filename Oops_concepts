@@ -1,0 +1,42 @@
+### OBJECT : IT IS A BUNDLE OF RELATED "ATTRIBUTES" , METHODS (FUNCTIONS) ###
+
+### CLASS VARIABLE VS INSTANCE VARIABLE ###
+
+### Allow you to share data among all objects created from tha calss ###
+
+class Student:
+
+    class_year = 2024 ### Class Variable ###
+
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age ### Intance Variable ###
+
+### INHERITANCE - ALLOWS ONE CALSS TO INHERIT ATTRIBUTES AND METHODS FROM ANOTHER CLASS ###
+### CODE REUSABILITY AND EXTENSIBILITY ###
+
+class Animal:
+
+    def __init__(self, name):
+        self.name = name
+        self.is_alive = True
+
+    def eat(self):
+        print(f"{self.name} is eating...")
+
+    def sleep(self):
+        print(f"{self.name} is sleeping...")
+
+class Dog(Animal):
+
+    def description(self,feature):
+        self.feature = feature
+        print(f"{self.name} is a {self.feature}")
+
+obj = input("Enter a name..")
+dog = Dog(obj)
+dog.description("canine")
+dog.sleep()
+
+### O/P --> Scooby is a canine / Scooby is sleeping. 
+# Note : Here in Dog class no constructor is used - Differentiate of when used / not used ###
